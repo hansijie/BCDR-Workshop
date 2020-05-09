@@ -1,25 +1,25 @@
----
-title: "×¼±¸¹¤×÷"
+ï»¿---
+title: "å‡†å¤‡å·¥ä½œ"
 chapter: false
 weight: 31
 ---
 
-## ÅäÖÃStorage GatewayÖ®Ç°µÄ×¼±¸¹¤×÷
+## é…ç½®Storage Gatewayä¹‹å‰çš„å‡†å¤‡å·¥ä½œ
 
-½ÓÏÂÀ´ÎÒÃÇ»á½øĞĞ×¼±¸¹¤×÷£º
-1.´´½¨Ò»¸öIAMÓÃ»§
-µÇÂ¼ AWS ¹ÜÀí¿ØÖÆÌ¨£¬²¢Í¨¹ıÍøÖ·https://console.amazonaws.cn/iam/home#/users$new?step=details´ò¿ª ¡°IAM¡±¿ØÖÆÌ¨£¬²¢¿ªÊ¼´´½¨Ò»¸öĞÂµÄÓÃ»§¡£
-´´½¨Ò»¸öĞÂµÄIAMÓÃ»§£¬¡°·ÃÎÊÀàĞÍ¡±Ñ¡Ôñ¡±Programmatic access¡±£¬ÓÃ»§ÃûÎª¡±storagegateway-coldbackup¡±¡£
+æ¥ä¸‹æ¥æˆ‘ä»¬ä¼šè¿›è¡Œå‡†å¤‡å·¥ä½œï¼š
+1.åˆ›å»ºä¸€ä¸ªIAMç”¨æˆ·
+ç™»å½• AWS ç®¡ç†æ§åˆ¶å°ï¼Œå¹¶é€šè¿‡ç½‘å€https://console.amazonaws.cn/iam/home#/users$new?step=detailsæ‰“å¼€ â€œIAMâ€æ§åˆ¶å°ï¼Œå¹¶å¼€å§‹åˆ›å»ºä¸€ä¸ªæ–°çš„ç”¨æˆ·ã€‚
+åˆ›å»ºä¸€ä¸ªæ–°çš„IAMç”¨æˆ·ï¼Œâ€œè®¿é—®ç±»å‹â€é€‰æ‹©â€Programmatic accessâ€ï¼Œç”¨æˆ·åä¸ºâ€storagegateway-coldbackupâ€ã€‚
 ![](/images/SetupStorageGW/addIAMUser.png)
-ÏÂÒ»²½Ñ¡ÔñAWS¹ÜÀíµÄ²ßÂÔ£ºAmazonS3FullAccess ºÍ AWSStorageGatewayFullAccess
+ä¸‹ä¸€æ­¥é€‰æ‹©AWSç®¡ç†çš„ç­–ç•¥ï¼šAmazonS3FullAccess å’Œ AWSStorageGatewayFullAccess
 ![](/images/SetupStorageGW/IAMPolicy1.png)
 ![](/images/SetupStorageGW/IAMPolicy2.png)
-×îºóĞèÒª¼ÇÂ¼ÏÂAccess KeyºÍSecret Access Key²¢Í×ÉÆ±£´æ¡£
+æœ€åéœ€è¦è®°å½•ä¸‹Access Keyå’ŒSecret Access Keyå¹¶å¦¥å–„ä¿å­˜ã€‚
 ![](/images/SetupStorageGW/AKSK.png)
 
-2.´´½¨Ò»¸öS3 Bucket
-µÇÂ¼ AWS ¹ÜÀí¿ØÖÆÌ¨£¬²¢Í¨¹ıÍøÖ·https://console.amazonaws.cn/s3/bucket/create?region=cn-northwest-1´ò¿ª Amazon S3 ¿ØÖÆÌ¨£¬²¢¿ªÊ¼´´½¨Ò»¸öĞÂµÄ S3´æ´¢Í° 
-Create bucket (´´½¨´æ´¢Í°)£¬ÔÚ Bucket name ×Ö¶ÎÖĞ£¬ÎªĞÂ´æ´¢Í°¼üÈëÒ»¸ö·ûºÏ DNS ±ê×¼µÄÎ¨Ò»Ãû³Æ£¬´Ë´¦Ãû³ÆÎª¡°storagegateway-coldbackup-20200101xx¡±¡£¶ÔÓÚ Region£¬Ñ¡Ôñ×÷ÎªÒª½«´æ´¢Í°·ÅÖÃµ½µÄÇøÓò£¬Ñ¡Ôñ¡°China (Ningxia) cn-northwest-1¡±£¬È»ºóµã»÷¡±Create bukcet¡±¡£
+2.åˆ›å»ºä¸€ä¸ªS3 Bucket
+ç™»å½• AWS ç®¡ç†æ§åˆ¶å°ï¼Œå¹¶é€šè¿‡ç½‘å€https://console.amazonaws.cn/s3/bucket/create?region=cn-northwest-1æ‰“å¼€ Amazon S3 æ§åˆ¶å°ï¼Œå¹¶å¼€å§‹åˆ›å»ºä¸€ä¸ªæ–°çš„ S3å­˜å‚¨æ¡¶ 
+Create bucket (åˆ›å»ºå­˜å‚¨æ¡¶)ï¼Œåœ¨ Bucket name å­—æ®µä¸­ï¼Œä¸ºæ–°å­˜å‚¨æ¡¶é”®å…¥ä¸€ä¸ªç¬¦åˆ DNS æ ‡å‡†çš„å”¯ä¸€åç§°ï¼Œæ­¤å¤„åç§°ä¸ºâ€œstoragegateway-coldbackup-20200101xxâ€ã€‚å¯¹äº Regionï¼Œé€‰æ‹©ä½œä¸ºè¦å°†å­˜å‚¨æ¡¶æ”¾ç½®åˆ°çš„åŒºåŸŸï¼Œé€‰æ‹©â€œChina (Ningxia) cn-northwest-1â€ï¼Œç„¶åç‚¹å‡»â€Create bukcetâ€ã€‚
 ![](/images/SetupStorageGW/createS3Bucekt.png)
 
 
