@@ -55,7 +55,6 @@ sudo umount /mnt
 选中dr-site堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
 如果遇到错误，则进入VPC界面：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#vpcs:sort=VpcId
 选中名为"BCDRVPC"的VPC，然后点击【操作】菜单，在下拉列表里选择"Delete VPC"，并在弹出的窗口上点击【Delete VPC】
-等VPC删除完毕以后，再次删除dr-site堆栈。
 
 6.进入北京region的CloudFormation console：https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
 选中local-idc-env堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
