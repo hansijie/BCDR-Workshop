@@ -13,9 +13,16 @@ weight: 10
 本次实验中，模拟了一个部署在本地数据中心的应用系统，并通过利用AWS平台所提供的各种服务，设计容灾架构，包括对该应用系统进行备份，以及守夜灯容灾架构的设计和落地。
 
 本次实验环节包括：
+
 1.在AWS北京region的EC2中部署Wordpress应用系统，来模拟一个本地数据中心的业务系统
-2.配置AWS Storage Gateway，对本地数据中心里的文件数据备份到Amazon S3上
-3.在守夜灯容灾架构下，在容灾站点宁夏region中，部署Landing Zone，包括VPC、子网、安全组以及RDS
-4.部署CloudEndure，对应用服务器进行容灾
-5.部署AWS DMS，对数据库进行容灾
+
+2.在守夜灯容灾架构下，在容灾站点宁夏region中，部署Landing Zone，包括VPC、子网、安全组以及RDS
+
+3.部署CloudEndure，对应用服务器进行容灾
+
+4.部署AWS DMS，对数据库进行容灾
+
+5.配置AWS Storage Gateway，对本地数据中心里的文件数据备份到Amazon S3上(可选)
+
 6.模拟本地数据中心不可用，对应用系统进行容灾切换
+

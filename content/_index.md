@@ -4,7 +4,7 @@ chapter: false
 weight: 1
 ---
 
-<div style="text-align: center"><h2>Lucky Money AR Application Workshop</h2></div>
+<div style="text-align: center"><h2>业务连续性以及容灾动手训练营</h2></div>
 
 {{% notice info %}}
 要完成整个实验，大约需要2小时。
@@ -14,7 +14,11 @@ weight: 1
 通过本次实验，您可以了解如何使用AWS平台，为您的本地数据中心构建容灾站点。
 
 从技术上来说，您可以了解以下技术内容：
-* 学习如何使用AWS Storage Gateway
+
 * 学习如何配置CloudEndure进行应用容灾
+
 * 学习如何运行AWS DMS进行数据库复制
+
+* 学习如何使用AWS Storage Gateway进行备份
+
 * 了解如何在灾难发生时进行应用切换
