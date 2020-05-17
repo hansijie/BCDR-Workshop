@@ -13,6 +13,7 @@ weight: 20
 先进行如下的准备工作：
 
 1.在北京region创建key pair。登录北京region的keypair控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#KeyPairs:
+
 点击【Create key pair】
 ![](/images/CreateSourceEnv/createKeyPair1.png)
 在创建key pair界面上，指定"Name"为：local-idc-key，"File Format"为：pem。并点击【Create key pair】。
@@ -46,4 +47,16 @@ key pair文件只有在第一次创建的时候才能下载，如果没有下载
 包含IAM用户的access key和secret key的csv文件只有在第一次创建用户的时候才能下载，如果没有下载，则必须重新创建一个新的IAM用户。
 {{% /notice  %}}
 
+3.创建CloudFormation IAM role。进入创建IAM role的控制台：https://console.amazonaws.cn/iam/home?region=cn-north-1#/roles$new?step=type
+
+选择"AWS产品"，在"或者选择一个服务以查看其使用案例"部分选择CloudFormation。点击【下一步:权限】按钮。
+![](/images/CreateSourceEnv/createCFRole1.png)
+
+在"Attach权限策略"页面上，选择名为"AdministratorAccess"的策略。点击【下一步:标签】按钮。
+![](/images/CreateSourceEnv/createCFRole2.png)
+
+在"添加标签 (可选)"页面上，保留缺省值，点击【下一步:审核】按钮。
+
+在"创建角色"页面上，"角色名称"输入：Cloudformation-Role，点击【创建角色】按钮。
+![](/images/CreateSourceEnv/createCFRole3.png)
 

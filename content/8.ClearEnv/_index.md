@@ -60,11 +60,13 @@ sudo umount /mnt
 6.进入北京region的CloudFormation console：https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
 选中local-idc-env堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
 
-7.删除Key Pair。进入Key Pair控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#KeyPairs:
+7.删除名为"storagegateway-coldbackup-xxx"的S3 bucket。
+
+8.删除Key Pair。进入Key Pair控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#KeyPairs:
 
 选中"local-idc-key"，在【Actions】下拉菜单里，选择"Delete"选项，在弹出的窗口中，输入"delete"，并点击【Delete】按钮。
 
-8.删除IAM用户：demouser。进入IAM user的控制台：https://console.amazonaws.cn/iam/home?region=cn-northwest-1#/users/demouser
+9.删除IAM用户：demouser。进入IAM user的控制台：https://console.amazonaws.cn/iam/home?region=cn-northwest-1#/users/demouser
 
 点击【删除用户】按钮，并点击【是,删除】按钮。
 

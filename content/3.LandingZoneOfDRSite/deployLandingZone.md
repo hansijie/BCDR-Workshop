@@ -47,7 +47,7 @@ subnet CIDR:
 * VpcCidr保留缺省值：192.168.0.0/24
 ![](/images/LandingZoneOfDRSite/createStackStep2.png)
 
-6.在"配置堆栈选项"的权限部分，"IAM角色名称"处，在下拉列表里选择事先创建好的角色：Cloudformation-Role。其他保留缺省值，点击【下一步】。
+6.在"配置堆栈选项"的权限部分，"IAM角色名称"处，在下拉列表里选择角色：Cloudformation-Role。其他保留缺省值，点击【下一步】。
 ![](/images/LandingZoneOfDRSite/createStackStep3.png)
 
 7.在"审核"页面中，保留缺省值，点击【创建堆栈】。等待堆栈创建完毕。整个过程大约需要10分钟。

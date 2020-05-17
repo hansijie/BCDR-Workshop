@@ -12,6 +12,7 @@ weight: 32
 配置过程如下：
 
 1.进入北京region的VPC界面：https://console.amazonaws.cn/vpc/home?region=cn-north-1#vpcs:sort=VpcId
+
 找到名称为为：LocalVPC的VPC，并记录该VPC的ID。
 ![](/images/LandingZoneOfDRSite/idcVPCID.png)
 

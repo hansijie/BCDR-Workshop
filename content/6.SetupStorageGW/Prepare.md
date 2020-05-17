@@ -6,18 +6,7 @@ weight: 61
 
 ## 配置Storage Gateway之前的准备工作
 
-接下来我们会进行准备工作：
-1.创建一个IAM用户
-登录 AWS 管理控制台，并通过网址https://console.amazonaws.cn/iam/home#/users$new?step=details打开 “IAM”控制台，并开始创建一个新的用户。
-创建一个新的IAM用户，“访问类型”选择”Programmatic access”，用户名为”storagegateway-coldbackup”。
-![](/images/SetupStorageGW/addIAMUser.png)
-下一步选择AWS管理的策略：AmazonS3FullAccess 和 AWSStorageGatewayFullAccess
-![](/images/SetupStorageGW/IAMPolicy1.png)
-![](/images/SetupStorageGW/IAMPolicy2.png)
-最后需要记录下Access Key和Secret Access Key并妥善保存。
-![](/images/SetupStorageGW/AKSK.png)
-
-2.创建一个S3 Bucket
+1.创建一个S3 Bucket
 登录 AWS 管理控制台，并通过网址https://console.amazonaws.cn/s3/bucket/create?region=cn-northwest-1
 
 打开 Amazon S3 控制台，并开始创建一个新的 S3存储桶 
