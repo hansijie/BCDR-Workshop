@@ -10,10 +10,12 @@ weight: 74
 对于我们这次使用的Wordpress示例应用来说，则需要在AWS上进行如下的配置：
 
 1.打开宁夏region的EC2控制台，找到被CloudEndure启动起来的应用服务器：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances:tag:Name=CloudEndure,APP;sort=launchTime
+
 选择名称为"WordPress APP"的EC2，并记录其私有IP地址。
 ![](/images/Failover/wpEC2PrivIP.png)
 
 2.打开宁夏region的RDS控制台：https://cn-northwest-1.console.amazonaws.cn/rds/home?region=cn-northwest-1#database:id=wordpress;is-cluster=false
+
 把wordpress数据库的endpoint拷贝下来。
 ![](/images/Failover/getRDSEndpoint.png)
 

@@ -11,9 +11,11 @@ weight: 80
 1.清理DMS相关环境：
 
 * 删除DMS任务，进入DMS任务控制台：https://cn-northwest-1.console.amazonaws.cn/dms/v2/home?region=cn-northwest-1#tasks
+
 选中"dr-task"，在【操作】下拉菜单里选择"删除"选项。并在弹出窗口中点击【删除】按钮。
 
 * 删除终端节点，在DMS终端节点控制台：https://cn-northwest-1.console.amazonaws.cn/dms/v2/home?region=cn-northwest-1#endpointList
+
 选中source-db和target-db，在【操作】下拉菜单里选择"删除"选项。并在弹出窗口中点击【删除】按钮。
 ![](/images/CleanUp/deleteEndpoints.png)
 
@@ -35,25 +37,44 @@ sudo umount /mnt
 
 * 进入EC2的控制台，找到Filegateway的EC2实例：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Instances:search=Filegateway;sort=launchTime
 
-* 删除Storage Gateway所使用的Endpoint以及相关的安全组。
-
 在【操作】下拉菜单里选择"实例状态"选项，并选择"终止"选项。并在弹出窗口中选择【是,请终止】按钮。
 ![](/images/CleanUp/deleteStorageGWEC2.png)
 
+然后找到该实例对应的安全组，其名称为"Filegateway-EC2"：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#SecurityGroups:search=Filegateway-EC2;sort=group-id
+
+在右上角的"Actions"下拉菜单里，选择"Delete security group"选项，并在弹出的窗口上，点击【Delete】按钮，从而删除该安全组。
+![](/images/CleanUp/deleteFileGW-SG.png)
+
+* 删除Storage Gateway所使用的Endpoint。进入VPC终端节点控制台：https://console.amazonaws.cn/vpc/home?region=cn-north-1#Endpoints:sort=vpcEndpointId
+
+依次选中每个VPC终端节点，在"操作"下拉菜单里选择"删除终端节点"选项，并在弹出的窗口里点击【是,删除】按钮。
+![](/images/CleanUp/deleteVPCEndpoint1.png)
+
 2.删除VPC对等连接：vpc-peering。进入北京region的VPC Peering控制台：https://console.amazonaws.cn/vpc/home?region=cn-north-1#PeeringConnections:sort=vpcPeeringConnectionId
+
 选中VPC Peering，然后在【操作】下拉菜单里，选择"删除VPC对等连接"选项。
 在弹出的窗口中，选择"删除相关路由表条目"复选框，然后点击【是,删除】按钮。
 ![](/images/CleanUp/deleteVPCPeering1.png)
+
+然后进入宁夏region的VPC Peering控制台：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#RouteTables:sort=routeTableId
+
+选中"显式关联对象"列为"2个子网"的路由表
+![](/images/CleanUp/deleteVPCPeering2.png)
+
+并编辑该路由表，把标记为"blackhole"的路由条目删除，然后点击【保存路由】按钮。
+![](/images/CleanUp/deleteVPCPeering3.png)
 
 3.在CloudEndure里，在Machines里，选中Wordpress APP，然后在Machime action里，选中"Remove 1 Machine From This Console"
 ![](/images/CleanUp/removeMachineFromCE.png)
 在PROJECT ACTION里，选择"Delete Current Project"选项，删除wp-dr项目。
 
-删除CloudEndure所使用的1500端口的安全组。
+进入安全组控制台，并找到CloudEndure配置的安全组：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#SecurityGroups:search=CloudEndure
 
-4.进入宁夏region的EC2控制台：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances:tag:Name=APP;sort=launchTime
+4.进入宁夏region的EC2控制台：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances;sort=launchTime:instanceState=running;sort=launchTime
 
-选择界面上显示的EC2，然后在【操作】下拉菜单里，选择"实例状态"，以及"终止"选项，并在弹出的对话框中，勾选"释放弹性IP"复选框，从而终止这台EC2。
+依次选择界面上显示的每一个EC2，然后在【操作】下拉菜单里，选择"实例状态"，以及"终止"选项，并在弹出的对话框中，勾选"释放弹性IP"复选框，从而终止这台EC2。
+
+在右上角的"Actions"下拉菜单里选择"Delete security group"选项，在弹出的窗口上，点击【Delete】按钮，从而删除该安全组。
 
 5.进入宁夏region的CloudFormation console：https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
 选中dr-site堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。

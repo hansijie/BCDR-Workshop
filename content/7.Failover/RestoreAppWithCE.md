@@ -31,7 +31,7 @@ CloudEndure在做连续数据复制时，会保留"Latest"即最近的恢复时�
 在这里，我们选择"Latest"，并点击【CONTINUE WITH LAUNCH】按钮。
 ![](/images/Failover/testmode2.png)
 
-4.此时，CloudEndure会在AWS宁夏区域启动一台容灾服务器示例。你可以通过点击主界面左边的Job Progress菜单选项查看任务执行的状态。
+4.此时，CloudEndure会在AWS宁夏区域启动一台容灾服务器示例。你可以通过点击主界面左边的Job Progress菜单选项查看任务执行的状态。测试过程大约需要5分钟左右。
 ![](/images/Failover/testmode3.png)
 
 5.测试模式切换完成后，AWS宁夏区域会出现一台目标实例，接下来就可以对目标实例进行验证。
@@ -43,7 +43,7 @@ CloudEndure在做连续数据复制时，会保留"Latest"即最近的恢复时�
 停止生产端的应用，在CloudEndure Console上选择需要切换测试的机器，在Console右上角，选择Recovery Mode开始进行模式切换。
 ![](/images/Failover/recoverymode1.png)
 在弹出的窗口上点击【NEXT】按钮，然后系统会跳出一个菜单让你选择恢复时间点。在这里，我们选择"Latest"，并点击【CONTINUE WITH LAUNCH】按钮。
-你可以通过点击主界面左边的Job Progress菜单选项查看任务执行的状态。
+你可以通过点击主界面左边的Job Progress菜单选项查看任务执行的状态。大约需要7分钟完成切换。
 
 7.切换完成后，CloudEndure console上显示Failed Over的状态。此时，应用服务器在容灾站点运行。
 ![](/images/Failover/recoverymode2.png)
