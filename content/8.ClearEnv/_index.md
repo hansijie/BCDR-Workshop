@@ -50,6 +50,10 @@ sudo umount /mnt
 依次选中每个VPC终端节点，在"操作"下拉菜单里选择"删除终端节点"选项，并在弹出的窗口里点击【是,删除】按钮。
 ![](/images/CleanUp/deleteVPCEndpoint1.png)
 
+然后删除storage gateway endpoint所使用的安全组，通过控制台找到对应的安全组：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#SecurityGroups:search=storagegateway
+
+选中该名称为"storagegateway-VPC-Endpoint"的安全组，在"Actions"下来菜单里，选择"Delete security group"选项，并在弹出的窗口上，点击【Delete】按钮，删除该安全组。
+
 2.删除VPC对等连接：vpc-peering。进入北京region的VPC Peering控制台：https://console.amazonaws.cn/vpc/home?region=cn-north-1#PeeringConnections:sort=vpcPeeringConnectionId
 
 选中VPC Peering，然后在【操作】下拉菜单里，选择"删除VPC对等连接"选项。
@@ -77,15 +81,17 @@ sudo umount /mnt
 在右上角的"Actions"下拉菜单里选择"Delete security group"选项，在弹出的窗口上，点击【Delete】按钮，从而删除该安全组。
 
 5.进入宁夏region的CloudFormation console：https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
+
 选中dr-site堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
 如果遇到错误，则进入VPC界面：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#vpcs:sort=VpcId
 选中名为"BCDRVPC"的VPC，然后点击【操作】菜单，在下拉列表里选择"Delete VPC"，并在弹出的窗口上点击【Delete VPC】
 等VPC删除完毕以后，再次删除dr-site堆栈。
 
 6.进入北京region的CloudFormation console：https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
+
 选中local-idc-env堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
 
-7.删除名为"storagegateway-coldbackup-xxx"的S3 bucket。
+7.删除名为"storagegateway-coldbackup-xxx"的S3 bucket里的文件以后，再把该bucket删除。以及删除"cf-templates"开头的bucket。
 
 8.删除Key Pair。进入Key Pair控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#KeyPairs:
 
@@ -95,5 +101,5 @@ sudo umount /mnt
 
 点击【删除用户】按钮，并点击【是,删除】按钮。
 
-10.删除IAM role：dms-vpc-role。
+10.删除IAM role：dms-vpc-role、Cloudformation-Role以及StorageGateway开头的角色。
 
