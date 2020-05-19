@@ -1,7 +1,7 @@
 ﻿---
 title: "灾难切换"
 chapter: false
-weight: 70
+weight: 60
 ---
 
 ## 灾难切换
@@ -16,4 +16,3 @@ weight: 70
 
 * 在AWS平台上，把应用服务器和数据库关联，并使其正常可用
 
-* 在AWS平台上，对AWS Storage Gateway备份的文件进行恢复 (可选)

@@ -1,7 +1,7 @@
 ﻿---
 title: "启动容灾环境中的应用服务器"
 chapter: false
-weight: 72
+weight: 62
 ---
 
 ## 通过CloudEndure把容灾环境的应用服务器启动起来

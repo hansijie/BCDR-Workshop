@@ -1,7 +1,7 @@
 ﻿---
 title: "在容灾站点启动应用程序"
 chapter: false
-weight: 74
+weight: 64
 ---
 
 ## 在AWS平台上把应用服务器和数据库关联并使其正常可用

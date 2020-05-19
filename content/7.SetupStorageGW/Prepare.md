@@ -1,7 +1,7 @@
 ﻿---
 title: "准备工作"
 chapter: false
-weight: 61
+weight: 71
 ---
 
 ## 配置Storage Gateway之前的准备工作

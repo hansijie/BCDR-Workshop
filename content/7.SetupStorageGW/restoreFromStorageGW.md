@@ -1,7 +1,7 @@
 ﻿---
 title: "从Stroage Gateway上恢复数据"
 chapter: false
-weight: 75
+weight: 72
 ---
 
 ## 对AWS Storage Gateway备份的文件进行恢复
@@ -15,5 +15,5 @@ ls /mnt
 ```
 
 即可看到在/mnt目录下，您在本地数据中心环境里输入的3个文件了。
-![](/images/Failover/restoreFromStorageGW.png)
+![](/images/SetupStorageGW/restoreFromStorageGW.png)
 

@@ -1,7 +1,7 @@
 ﻿---
 title: "备份数据到Stroage Gateway上"
 chapter: false
-weight: 62
+weight: 72
 ---
 
 ## 本地数据中心使用AWS Storage Gateway作为NAS存储，进行文件备份

@@ -1,7 +1,7 @@
 ﻿---
 title: "创建AWS Storage Gateway (可选)"
 chapter: false
-weight: 60
+weight: 70
 ---
 
 在本次实验中，我们会部署AWS Storage Gateway，对本地数据中心里的文件进行备份，并存储在Amazon S3上。
@@ -18,5 +18,8 @@ Stroage Gateway的整体方案如下图：
 本次实验中，我们会进行如下的操作：
 
 * 准备工作
+
 * 在本地数据中心中使用AWS Storage Gateway作为NAS存储，进行文件备份
+
+* 在AWS平台上，对AWS Storage Gateway备份的文件进行恢复
 

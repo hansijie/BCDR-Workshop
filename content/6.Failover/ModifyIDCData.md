@@ -1,7 +1,7 @@
 ﻿---
 title: "修改本地数据中心的数据"
 chapter: false
-weight: 71
+weight: 61
 ---
 
 ## 修改本地数据中心的数据

@@ -1,7 +1,7 @@
 ﻿---
 title: "停止AWS DMS的复制任务"
 chapter: false
-weight: 73
+weight: 63
 ---
 
 ## 停止AWS DMS的复制任务
