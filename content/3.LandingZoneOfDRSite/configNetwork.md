@@ -36,14 +36,17 @@ weight: 32
 ![](/images/LandingZoneOfDRSite/CreateVPCPeering1.png)
 ![](/images/LandingZoneOfDRSite/CreateVPCPeering2.png)
 
-3.到北京region的对等连接界面：https://console.amazonaws.cn/vpc/home?region=cn-north-1#PeeringConnections:sort=vpcPeeringConnectionId，
+3.到北京region的对等连接界面：https://console.amazonaws.cn/vpc/home?region=cn-north-1#PeeringConnections:sort=vpcPeeringConnectionId
+
 选中状态为"正在处理接受"的VPC peering，然后在"操作"下拉菜单里，选择"接受请求"选项。
 ![](/images/LandingZoneOfDRSite/CreateVPCPeering3.png)
 在弹出的确认界面中，选择【是，接受】按钮。
-回到宁夏region的对等连接界面：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#PeeringConnections:sort=vpcPeeringConnectionId，
+回到宁夏region的对等连接界面：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#PeeringConnections:sort=vpcPeeringConnectionId
+
 确认名为"dr-connection"的对等连接的状态为"活动"。
 
 4.到北京region的EC2界面：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Instances:tag:Name=Basion,APP;sort=launchTime
+
 选择名称为"WordPress APP"的EC2，找到并点击其所在的子网ID的链接，进入VCP的子网界面。
 ![](/images/LandingZoneOfDRSite/wpserversubnet.png)
 
@@ -64,23 +67,18 @@ weight: 32
 ![](/images/LandingZoneOfDRSite/addrouteentry.png)
   
 8.到宁夏region的VPC界面上：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#vpcs:sort=VpcId
+
 找到并拷贝名称为BCDRVPC的VPC的ID。
+![](/images/LandingZoneOfDRSite/getBCDRVPCID.png)
 
-9.点击左侧"路由表"菜单，并在右侧的过滤栏里，输入上一步的VPC ID。找出属于该VPC的路由表ID。
+9.点击左侧"路由表"菜单，并在右侧的过滤栏里，输入上一步的VPC ID。找出属于该VPC的路由表ID。并选中"显式关联对象"一栏为"2个子网"的那个路由表。
+![](/images/LandingZoneOfDRSite/selectDRSiteRouteTable.png)
 
-10.选择第一个路由表，并点击"路由" tab 页，然后点击【编辑路由】按钮，进入路由编辑界面。在"编辑路由"界面上，点击【添加路由】按钮：
+10.选中关联了子网的路由表以后，点击"路由" tab 页，然后点击【编辑路由】按钮，进入路由编辑界面。在"编辑路由"界面上，点击【添加路由】按钮：
 
   * 在第一列"目标"输入：10.0.0.0/24
   
   * 在第二列"目标"下拉列表里选择"Peering Connection"，并选择我们刚才创建对等连接。
   
   * 最后，点击【保存路由】
-
-对第二个路由表进行同样的操作，添加路由条目，把10.0.0.0/24加入该路由表里。
-
-
-
-
-
-
   

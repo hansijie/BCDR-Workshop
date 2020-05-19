@@ -1,10 +1,10 @@
 ﻿---
 title: "从Stroage Gateway上恢复数据"
 chapter: false
-weight: 63
+weight: 75
 ---
 
-## 从AWS Storage Gateway进行文件恢复
+## 对AWS Storage Gateway备份的文件进行恢复
 
 使用AWS Storage Gateway作为NAS存储，恢复文件的过程与备份类似，把文件网关挂载到目标服务器上即可。具体实验过程如下：
 
@@ -15,5 +15,5 @@ ls /mnt
 ```
 
 即可看到在/mnt目录下，您在本地数据中心环境里输入的3个文件了。
-![](/images/SetupStorageGW/restoreFromStorageGW.png)
+![](/images/Failover/restoreFromStorageGW.png)
 

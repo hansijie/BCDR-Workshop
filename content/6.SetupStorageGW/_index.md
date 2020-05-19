@@ -19,4 +19,4 @@ Stroage Gateway的整体方案如下图：
 
 * 准备工作
 * 在本地数据中心中使用AWS Storage Gateway作为NAS存储，进行文件备份
-* 本地数据中心使用AWS Storage Gateway作为NAS存储，进行文件恢复
+

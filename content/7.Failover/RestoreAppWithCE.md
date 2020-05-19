@@ -11,7 +11,7 @@ weight: 72
 1.配置蓝图(Blueprint)。到CloudEndure主界面，选择左边的Machines菜单选项，点击名为"WordPress APP"服务器，进入 Blueprint（蓝图）界面设置目标实例的配置信息：
 
 * "Machine Type"中选择目标实例的类型，可以选择各种实例类型，或者选择复制源端的实例类型；这里选择c5.large。
-* "Launch Type"中选择按需实例或者Spot实例；这里保留缺省的On Demand。
+* "Launch Type"中选择实例类型，这里保留缺省：On Demand。
 * "Subnet"选择名为BCDRVPC里的名为DMZ subnet的子网。
 * "Security Groups"选择名为WebServerSecurityGroup的安全组。
 * "Private IP"选择"Create new"。

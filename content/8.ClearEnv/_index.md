@@ -35,6 +35,8 @@ sudo umount /mnt
 
 * 进入EC2的控制台，找到Filegateway的EC2实例：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Instances:search=Filegateway;sort=launchTime
 
+* 删除Storage Gateway所使用的Endpoint以及相关的安全组。
+
 在【操作】下拉菜单里选择"实例状态"选项，并选择"终止"选项。并在弹出窗口中选择【是,请终止】按钮。
 ![](/images/CleanUp/deleteStorageGWEC2.png)
 
@@ -46,6 +48,8 @@ sudo umount /mnt
 3.在CloudEndure里，在Machines里，选中Wordpress APP，然后在Machime action里，选中"Remove 1 Machine From This Console"
 ![](/images/CleanUp/removeMachineFromCE.png)
 在PROJECT ACTION里，选择"Delete Current Project"选项，删除wp-dr项目。
+
+删除CloudEndure所使用的1500端口的安全组。
 
 4.进入宁夏region的EC2控制台：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances:tag:Name=APP;sort=launchTime
 
@@ -69,4 +73,6 @@ sudo umount /mnt
 9.删除IAM用户：demouser。进入IAM user的控制台：https://console.amazonaws.cn/iam/home?region=cn-northwest-1#/users/demouser
 
 点击【删除用户】按钮，并点击【是,删除】按钮。
+
+10.删除IAM role：dms-vpc-role。
 

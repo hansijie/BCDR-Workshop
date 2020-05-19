@@ -346,7 +346,7 @@ Resources:
     DependsOn: VPCGatewayAttach
     Type: 'AWS::EC2::Instance'
     Properties:
-      ImageId: ami-02b698435cb944da2
+      ImageId: ami-05113264413cdc6b2
       InstanceInitiatedShutdownBehavior: stop
       InstanceType: !Ref InstanceType
       KeyName: !Ref KeyName
@@ -363,7 +363,7 @@ Resources:
   CreateBasionInstance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      ImageId: ami-0e9a7f4b62c5b23e3
+      ImageId: ami-0f8fbd7ba3d23d770
       InstanceInitiatedShutdownBehavior: stop
       InstanceType: !Ref InstanceType
       KeyName: !Ref KeyName

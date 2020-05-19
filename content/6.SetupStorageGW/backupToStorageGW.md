@@ -27,11 +27,10 @@ weight: 62
 ![](/images/SetupStorageGW/createStorageGW-EC2.png)
 
 并点击【启动实例】按钮。在弹出的界面上，按照设置说明配置VPC，主机类型，添加新EBS卷，安全组等。
-注意：
-* 如要求，EC2配置要求大于或等于xlarge，即4核/16G内存。建议使用m5.xlarge。
+注意：EC2配置要求大于或等于xlarge，即4核/16G内存。建议使用m5.xlarge。
 ![](/images/SetupStorageGW/createStorageGW-EC2Type.png)
 
-* 在"步骤 3: 配置实例详细信息"中，"网络"一栏选择名称为"LocalVPC"的子网，"自动分配公有IP"下拉列表里选择"启用"。点击【下一步:添加存储】按钮。
+* 在"步骤 3: 配置实例详细信息"中，"网络"一栏选择名称为"LocalVPC"的子网，其他保留缺省值。点击【下一步:添加存储】按钮。
 ![](/images/SetupStorageGW/createStorageGW-VPC.png)
 
 * 需要额外添加EBS卷，其容量设置不应小于150G；（存储网关至少需要添加一个磁盘以便进行缓存，客户端对文件的访问会首先在缓存中去获取文件信息，这样将大大减少通过网络去S3直接获取文件的延迟，文件存储网关缓存最大值为16TB）。点击【下一步:添加标签】按钮。
@@ -47,8 +46,10 @@ weight: 62
 * 点击【启动】按钮。在弹出的窗口中，在"选择一个密钥对"下拉列表里，选择"local-idc-key"。并选中"我确认我有权访问所选的私有密钥文件(local-idc-key.pem)，并且如果没有此文件，我将无法登录我的实例。"复选框。点击【启动实例】按钮。
 ![](/images/SetupStorageGW/createStorageGW-LaunchEC2.png)
 
-3.获得Gateway私有IP。进入EC2的控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Instances:search=Filegateway;sort=launchTime
-等待EC2创建完成，进入EC2详情页，记录下该机器的公网IP （下文称为 Gateway公网IP）以及私有IP（下文称为 Gateway私网IP）
+3.获得Gateway私有IP。
+进入EC2的控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Instances:search=Filegateway;sort=launchTime
+
+等待EC2创建完成，进入EC2详情页，记录下该机器的私有IP（下文称为 Gateway私网IP）
 ![](/images/SetupStorageGW/createStorageGW-IP.png)
 
 4.回到"创建网关"界面，点击【下一步】，"终端节点类型"选择"VPC"，并点击【创建VPC终端节点】按钮。
@@ -68,6 +69,7 @@ weight: 62
 在"Description"处输入：storagegateway-VPC-Endpoint
 在"VPC"下拉列表里选择：LocalVPC
 在"Inbound rules"中点击【Add rule】，并别添加如下规则：
+
 - TCP 443
 
 - TCP 1026
@@ -107,7 +109,7 @@ weight: 62
 ![](/images/SetupStorageGW/createStorageGW-loggroup.png)
 ![](/images/SetupStorageGW/createStorageGW-finish.png)
 
-11.创建S3 VPC终端节点。进入创建VPC终端节点控制台：https://console.amazonaws.cn/vpc/home?region=cn-north-1#CreateVpcEndpoint:vpcEndpointId=vpce-0fa8c96af2c2c844d
+11.创建S3 VPC终端节点。进入创建VPC终端节点控制台：https://console.amazonaws.cn/vpc/home?region=cn-north-1#CreateVpcEndpoint
 
 * 在"服务名称"处，找到并选择"com.amazonaws.cn-north-1.s3"
 
@@ -148,5 +150,5 @@ echo "hello, three" > hello3.txt
 ![](/images/SetupStorageGW/verifyBackup.png)
 
 {{% notice note %}}
-注意： 您在/nfs文件夹下的任何操作会直接映射到File Gateway缓存上，为了提升效率，缓存会定期和S3进行同步工作。所以，当您添加了一个文件在/nfs中，可能需要过几秒在S3存储桶中看到它。
+注意： 您在/mnt文件夹下的任何操作会直接映射到File Gateway缓存上，为了提升效率，缓存会定期和S3进行同步工作。所以，当您添加了一个文件在/mnt中，可能需要过几秒在S3存储桶中看到它。
 {{% /notice  %}}

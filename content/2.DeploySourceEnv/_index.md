@@ -12,7 +12,12 @@ weight: 20
 
 先进行如下的准备工作：
 
-1.在北京region创建key pair。登录北京region的keypair控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#KeyPairs:
+1.登录AWS控制台：https://console.amazonaws.cn/console/home?region=cn-north-1
+
+把右侧滚动条拖到最底端，点击"English"链接，并选择"中文(简体)"选项。
+![](/images/CreateSourceEnv/enableChinese.png)
+
+2.在北京region创建key pair。登录北京region的keypair控制台：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#KeyPairs:
 
 点击【Create key pair】
 ![](/images/CreateSourceEnv/createKeyPair1.png)
@@ -25,10 +30,12 @@ weight: 20
 key pair文件只有在第一次创建的时候才能下载，如果没有下载，则必须重新创建一个新的key paire文件。
 {{% /notice  %}}
 
-2.创建IAM用户。登录创建IAM用户的控制台：https://console.amazonaws.cn/iam/home?region=cn-north-1#/users$new?step=details
+3.创建IAM用户。登录创建IAM用户的控制台：https://console.amazonaws.cn/iam/home?region=cn-north-1#/users$new?step=details
 
 在"设置用户详细信息"页面上：
+
 * 在"用户名"处输入：demouser
+
 * 在"访问类型"处勾选"编程访问"
 ![](/images/CreateSourceEnv/createUser1.png)
 
@@ -47,7 +54,7 @@ key pair文件只有在第一次创建的时候才能下载，如果没有下载
 包含IAM用户的access key和secret key的csv文件只有在第一次创建用户的时候才能下载，如果没有下载，则必须重新创建一个新的IAM用户。
 {{% /notice  %}}
 
-3.创建CloudFormation IAM role。进入创建IAM role的控制台：https://console.amazonaws.cn/iam/home?region=cn-north-1#/roles$new?step=type
+4.创建CloudFormation IAM role。进入创建IAM role的控制台：https://console.amazonaws.cn/iam/home?region=cn-north-1#/roles$new?step=type
 
 选择"AWS产品"，在"或者选择一个服务以查看其使用案例"部分选择CloudFormation。点击【下一步:权限】按钮。
 ![](/images/CreateSourceEnv/createCFRole1.png)
