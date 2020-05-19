@@ -1,7 +1,7 @@
 ﻿---
 title: "从Stroage Gateway上恢复数据"
 chapter: false
-weight: 72
+weight: 73
 ---
 
 ## 对AWS Storage Gateway备份的文件进行恢复
