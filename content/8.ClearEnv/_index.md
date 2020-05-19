@@ -1,5 +1,5 @@
 ﻿---
-title: "清理环境"
+title: "清理环境 (可选)"
 chapter: false
 weight: 80
 ---
@@ -47,9 +47,9 @@ sudo umount /mnt
 ![](/images/CleanUp/removeMachineFromCE.png)
 在PROJECT ACTION里，选择"Delete Current Project"选项，删除wp-dr项目。
 
-4.进入宁夏region的EC2控制台：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances:tag:Name=CloudEndure,APP;sort=launchTime
+4.进入宁夏region的EC2控制台：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances:tag:Name=APP;sort=launchTime
 
-选择界面上显示的两台EC2，然后在【操作】下拉菜单里，选择"实例状态"，以及"终止"选项，从而终止这两台EC2。
+选择界面上显示的EC2，然后在【操作】下拉菜单里，选择"实例状态"，以及"终止"选项，并在弹出的对话框中，勾选"释放弹性IP"复选框，从而终止这台EC2。
 
 5.进入宁夏region的CloudFormation console：https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
 选中dr-site堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
