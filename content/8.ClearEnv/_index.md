@@ -72,20 +72,16 @@ sudo umount /mnt
 ![](/images/CleanUp/removeMachineFromCE.png)
 在PROJECT ACTION里，选择"Delete Current Project"选项，删除wp-dr项目。
 
-进入安全组控制台，并找到CloudEndure配置的安全组：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#SecurityGroups:search=CloudEndure
-
 4.进入宁夏region的EC2控制台：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances;sort=launchTime:instanceState=running;sort=launchTime
 
 依次选择界面上显示的每一个EC2，然后在【操作】下拉菜单里，选择"实例状态"，以及"终止"选项，并在弹出的对话框中，勾选"释放弹性IP"复选框，从而终止这台EC2。
 
+进入安全组控制台，并找到CloudEndure配置的安全组：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#SecurityGroups:search=CloudEndure
 在右上角的"Actions"下拉菜单里选择"Delete security group"选项，在弹出的窗口上，点击【Delete】按钮，从而删除该安全组。
 
 5.进入宁夏region的CloudFormation console：https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
 
 选中dr-site堆栈，并点击【删除】按钮。在弹出窗口中，点击【删除堆栈】按钮。
-如果遇到错误，则进入VPC界面：https://cn-northwest-1.console.amazonaws.cn/vpc/home?region=cn-northwest-1#vpcs:sort=VpcId
-选中名为"BCDRVPC"的VPC，然后点击【操作】菜单，在下拉列表里选择"Delete VPC"，并在弹出的窗口上点击【Delete VPC】
-等VPC删除完毕以后，再次删除dr-site堆栈。
 
 6.进入北京region的CloudFormation console：https://console.amazonaws.cn/cloudformation/home?region=cn-north-1#/stacks?filteringText=&filteringStatus=active&viewNested=true&hideStacks=false
 

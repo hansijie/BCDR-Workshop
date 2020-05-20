@@ -39,6 +39,7 @@ https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Instances:tag:Name=Ba
 在Hostname字段里输入第一步中记录的Wordpress服务器的私有IP地址
 
 点击"Store in Vault..."按钮，在弹出的窗口的"Password"栏位中输入：Initial-1
+
 如果发现弹出如下报错窗口，则点击【Ignore】按钮忽略即可。
 ![](/images/CreateSourceEnv/ignoreMySQLError2.png)
 

@@ -40,7 +40,7 @@ weight: 72
 ![](/images/SetupStorageGW/createStorageGW-Tag.png)
 
 * 在"步骤 6: 配置安全组"上，"分配安全组"里选择"创建一个新的安全组"，"安全组名称"为"Filegateway-EC2"。
-安全组上临时配置安全策略，允许VPC内其它机器通过80端口访问该机器（临时开放http 80端口）。点击【审核和启动】按钮。
+安全组上临时配置安全策略，允许22、80和2049端口访问该机器。点击【审核和启动】按钮。
 ![](/images/SetupStorageGW/createStorageGW-SG.png)
 
 * 点击【启动】按钮。在弹出的窗口中，在"选择一个密钥对"下拉列表里，选择"local-idc-key"。并选中"我确认我有权访问所选的私有密钥文件(local-idc-key.pem)，并且如果没有此文件，我将无法登录我的实例。"复选框。点击【启动实例】按钮。

@@ -9,6 +9,7 @@ weight: 51
 创建AWS DMS终端节点的步骤如下：
 
 1.打开宁夏region的DMS console：https://cn-northwest-1.console.amazonaws.cn/dms/v2/home?region=cn-northwest-1#replicationInstances
+
 找到通过Landing Zone的CloudFormation脚本创建的DMS复制实例，如下图所示。
 ![](/images/DataSyncWithDMS/selectDMSInstance.png)
 

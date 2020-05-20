@@ -13,3 +13,5 @@ CloudEndure agent部署完毕以后，会发起初次全同步，可以在Consol
 
 同时，在AWS宁夏区域里会出现一台名称为"CloudEndure Replication Server"开头的复制服务器实例。
 https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Instances:search=Cloud;sort=launchTime
+
+在等待CloudEndure完成初次全同步的过程中，可以同步继续进行后面的实验。
