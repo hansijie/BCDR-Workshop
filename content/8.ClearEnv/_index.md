@@ -116,6 +116,6 @@ sudo umount /mnt
 
 依次选中每个策略，在"策略操作"下拉菜单里，选中"删除"按钮，并在弹出窗口里点击【删除】按钮。
 
-15.删除多余的RDS快照。进入自动备份界面：https://console.amazonaws.cn/iam/home?region=cn-northwest-1#/policies
+15.删除多余的RDS快照。进入自动备份界面：https://console.amazonaws.cn/rds/home?region=cn-north-1#automatedbackups:
 
 点击"Retained" tab页，选中wordpress自动备份，在"Actions"下拉菜单里选择"Delete"选项。在弹出窗口中，输入"delete me"，点击【删除】按钮。

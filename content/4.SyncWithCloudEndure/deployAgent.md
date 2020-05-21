@@ -11,7 +11,7 @@ weight: 41
 
 输入工作人员提供的用户名和密码，然后点击【SIGN IN】
 
-2.点击左上角的"+"，创建项目，填写项目名称为wp-dir、类型选择Disaster Recovery，并创建项目。
+2.点击左上角的"+"，创建项目，填写项目名称为wp-dir(如果多人共用一个CloudEndure账号，则项目名称后面可以跟上自己的名称，比如wp-dir-xyz)、类型选择Disaster Recovery，并创建项目。
 ![](/images/SyncWithCloudEndure/createProject.png)
 
 3.点击创建项目按钮以后，在弹出的窗口上点击【START】按钮，并在下一个弹出的"Project Not Set Up!"界面上，点击【CONTINUE】按钮。
