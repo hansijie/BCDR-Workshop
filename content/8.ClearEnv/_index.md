@@ -99,3 +99,23 @@ sudo umount /mnt
 
 10.删除IAM role：dms-vpc-role、Cloudformation-Role以及StorageGateway开头的角色。
 
+11.删除多余的EBS卷：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#Volumes:sort=desc:createTime
+
+选中Filegateway产生的卷，在"操作"菜单下，选中"删除卷"，在弹出的窗口中点击【是,删除】按钮。
+
+12.删除多余的安全组：https://console.amazonaws.cn/ec2/v2/home?region=cn-north-1#SecurityGroups:
+
+13.删除EC2的快照：https://cn-northwest-1.console.amazonaws.cn/ec2/v2/home?region=cn-northwest-1#Snapshots:sort=snapshotId
+
+选中所有的快照，并在"操作"菜单里选择"删除"选项，在弹出的窗口里点击【是,删除】按钮。
+
+14.删除多余的策略：https://console.amazonaws.cn/iam/home?region=cn-northwest-1#/policies
+
+在"筛选策略"里输入"allowstorage"，如以下截图示例：
+![](/images/CleanUp/deletePolicy.png)
+
+依次选中每个策略，在"策略操作"下拉菜单里，选中"删除"按钮，并在弹出窗口里点击【删除】按钮。
+
+15.删除多余的RDS快照。进入自动备份界面：https://console.amazonaws.cn/iam/home?region=cn-northwest-1#/policies
+
+点击"Retained" tab页，选中wordpress自动备份，在"Actions"下拉菜单里选择"Delete"选项。在弹出窗口中，输入"delete me"，点击【删除】按钮。
