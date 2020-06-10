@@ -363,7 +363,7 @@ Resources:
   CreateBasionInstance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      ImageId: ami-0f8fbd7ba3d23d770
+      ImageId: ami-0f303a8cd8eea2904
       InstanceInitiatedShutdownBehavior: stop
       InstanceType: !Ref InstanceType
       KeyName: !Ref KeyName
